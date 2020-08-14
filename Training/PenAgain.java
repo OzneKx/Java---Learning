@@ -9,7 +9,7 @@ public class PenAgain {
 
   // Method set (7)
   
-  // public PenAgain() {
+   public PenAgain() {
     this.close();
     this.color = "Preto";
     //Constructor Method
@@ -49,6 +49,6 @@ public class PenAgain {
     System.out.println("Modelo: " + this.getModel());
     System.out.println("Ponta: " + this.getTip());
     System.out.println("Cor: " + this.color);
-    Sytem.out.println("Tempada? " + this.is_open);
+    System.out.println("Tempada? " + this.is_open);
   }
 }
