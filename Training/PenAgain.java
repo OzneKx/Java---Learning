@@ -9,9 +9,11 @@ public class PenAgain {
 
   // Method set (7)
   
-   public PenAgain() {
+   public PenAgain(String m, String c, float p) {
+    this.model = m;
+    this.color = c;
+    this.tip = p;
     this.close();
-    this.color = "Preto";
     //Constructor Method
   } //
 
@@ -43,9 +45,8 @@ public class PenAgain {
     this.is_open = false;
   }
 
-
   public void status() {
-    System.out.println("Especificações da caneta: ");
+    System.out.println("\nEspecificações da caneta: ");
     System.out.println("Modelo: " + this.getModel());
     System.out.println("Ponta: " + this.getTip());
     System.out.println("Cor: " + this.color);
