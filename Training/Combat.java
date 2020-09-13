@@ -16,7 +16,8 @@ public class Combat {
     
     fight[5] = new Fighter("F", "Pais6", 30, 1.81f, 105.7f, 12, 2, 4);
 
-    fight[3].tieFights();
-    fight[3].status();
+    Fight UEC01 = new Fight();
+    UEC01.fightSchedule(fight[0], fight[1]);
+    UEC01.fighting();
   }
 }

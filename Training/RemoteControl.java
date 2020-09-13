@@ -35,10 +35,6 @@ public class RemoteControl implements Controller {
     this.onOrOff = on;
   }
 
-  private void isRingingOrNot(boolean ringing) {
-    this.ringingOrNot = ringing;
-  }
-
   // Abstract methods
   @Override
   public void turnOn(){ 
