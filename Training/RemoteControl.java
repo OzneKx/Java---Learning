@@ -1,59 +1,63 @@
 package Training;
 
 public class RemoteControl implements Controller {
-  // Attributes set
-  private int volume;
-  private boolean onOrOff;
-  private boolean ringingOrNot;
 
-  // Special methods
+  // Attributes set (3)
+  private int volume;
+  private boolean on;
+  private boolean ringing;
+
+  // Constructor Method
   public RemoteControl() {
     this.volume = 50;
-    this.onOrOff = true;
-    this.ringingOrNot = false;
+    this.on = true;
+    this.ringing = false;
   }
 
-  // GETTER methods
+  // Special Methods (Getter && Setter)
   private int getVolume() {
     return volume;
   }
 
-  private boolean isOnOrOff() {
-    return onOrOff;
-  }
-
-  private boolean ringingOrNot() {
-    return ringingOrNot;
-  }
-
-  // SETTER methods
   private void setVolume(int volume) {
     this.volume = volume;
   }
 
-  private void isOnOrOff(boolean on) {
-    this.onOrOff = on;
+  private boolean getOn() {
+    return on;
   }
 
-  // Abstract methods
+  private void isOn(boolean on) {
+    this.on = on;
+  }
+
+  private boolean getRinging() {
+    return ringing;
+  }
+
+  private void isRinging(boolean ringing) {
+    this.ringing = ringing;
+  }
+
+  // Abstract Methods
   @Override
-  public void turnOn(){ 
-    this.isOnOrOff(true);
+  public void turnOn() {
+    this.isOn(true);
   }
 
   @Override
   public void turnOff() {
-    this.isOnOrOff(false);
-  } 
+    this.isOn(false);
+  }
 
-  @Override 
-  public void openMenu(){
-    System.out.println("---- MENU ----");
-    System.out.println("Ligado? " + this.isOnOrOff());
-    System.out.println("Tocando? " + this.ringingOrNot());
-    System.out.println("Volume: " + this.getVolume());
-    for (int i = 0; i <= this.getVolume(); i+=10) {
-      System.out.println("|");
+  @Override
+  public void openMenu() {
+    System.out.println("=-=-= Menu =-=-=");
+    System.out.println("Está ligado? " + this.getOn());
+    System.out.println("Está tocando? " + this.getRinging());
+    System.out.print("Volume: " + this.getVolume());
+    for (int c = 0; c <= this.getVolume(); c+=10) {
+      System.out.print("|");
     }
     System.out.println("");
   }
@@ -65,55 +69,49 @@ public class RemoteControl implements Controller {
 
   @Override
   public void increaseVolume() {
-    if (this.isOnOrOff()) {
-      this.setVolume(getVolume() + 5);
-      System.out.println("Volume aumentado.");
+    if (this.getOn()) {
+      this.setVolume(this.getVolume() + 5);
     } else {
-      System.out.println("Impossível aumentar o volume.");
+      System.out.println("Impossível diminuir o volume, pois está desligado");
     }
   }
 
   @Override
   public void decreaseVolume() {
-    if (this.isOnOrOff()) {
-      this.setVolume(getVolume() - 5);
-      System.out.println("Volume diminuido.");
+    if (this.getOn()) {
+      this.setVolume(this.getVolume() - 5);
     } else {
-      System.out.println("Impossível diminuir o volume.");
+      System.out.println("Impossível diminuir o volume, pois está desligado");
     }
   }
 
   @Override
   public void muteVolume() {
-    if (this.isOnOrOff() && this.getVolume() > 0) {
+    if (this.getOn() && this.getVolume() > 0) {
       this.setVolume(0);
-      System.out.println("O volume está mudo.");
     }
   }
 
   @Override
   public void unmuteVolume() {
-    if (this.isOnOrOff() && this.getVolume() == 0) {
+    if (this.getOn() && this.getVolume() == 0) {
       this.setVolume(50);
-      System.out.println("O volume voltou para a amplitude inicial.");
+    }
+  }
+
+  @Override 
+  public void play() {
+    if (this.getOn() && !(this.getRinging())) {
+      this.isRinging(true);
+    } else {
+      System.out.println("Não foi possível reproduzir.");
     }
   }
 
   @Override
-  public void play() {
-    if (this.isOnOrOff() && !(this.ringingOrNot())) {
-      this.isOnOrOff(true);
-      System.out.println("Está tocando.");
-    } else {
-      System.out.println("Não foi possível reproduzir.");
-    }
-   }
-
-  @Override
   public void pause() {
-    if (this.isOnOrOff() && (this.ringingOrNot())) {
-      this.isOnOrOff(false);
-      System.out.println("Não está tocando.");
+    if (this.getOn() && this.getRinging()) {
+      this.isRinging(false);
     } else {
       System.out.println("Não foi possível pausar.");
     }
