@@ -1,6 +1,6 @@
 package Training.Aula11;
 
-public class Bursar extends Student {
+public final class Bursar extends Student {
   // Atributes set (1)
   private float scholarship;
 

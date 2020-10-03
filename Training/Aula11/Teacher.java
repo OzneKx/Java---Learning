@@ -1,6 +1,6 @@
 package Training.Aula11;
 
-public class Teacher extends Person {
+public final class Teacher extends Person {
   // Atributes set (2)
   private String speciality;
   private double salary;
