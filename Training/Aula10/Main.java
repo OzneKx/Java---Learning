@@ -8,11 +8,6 @@ public class Main {
     Teacher p3 = new Teacher();
     Employee p4 = new Employee();
 
-    System.out.println(p1.toString());
-    System.out.println(p2.toString());
-    System.out.println(p3.toString());
-    System.out.println(p4.toString());
-
 
 
     // Superclass properties 
@@ -23,6 +18,9 @@ public class Main {
 
     p1.setGender("M");
     p2.setGender("M");
+    p3.setGender("M");
+    p4.setGender("M");
+
     p3.setAge(19);
 
   
@@ -31,5 +29,13 @@ public class Main {
     p2.setCourse("Business");
     p3.setSalary(2500.75);
     p4.setSector("Stock");
+
+
+
+    // toString() print
+    System.out.println(p1.toString());
+    System.out.println(p2.toString());
+    System.out.println(p3.toString());
+    System.out.println(p4.toString());
   }
 }
