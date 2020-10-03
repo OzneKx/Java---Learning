@@ -1,29 +1,37 @@
 package Training.Aula9;
 
 public class Book implements Publication {
-
   // Atributes set(6)
   private String title;
   private String author;
   private int totalPages;
   private int currentPage;
   private boolean open;
-  private String reader;
+  private Person reader;
+
+
+
+   // Abstract Methods
+   public String details() {
+     return "Book [\nauthor= " + author + "\n, currentPage=" 
+            + currentPage + "\n, open= " + open + "\n, reader= " 
+            + reader.getName() + ", idade= " + reader.getAge() + 
+            ", sexo= " + reader.getGender() + "\n, title= " 
+            + title + "\n, totalPages= " + totalPages + "\n]";
+   }
 
 
 
   // Constructor Method
   public Book(String title, 
               String author, 
-              int totalPages, 
-              int currentPage, 
-              boolean open, 
-              String reader) {
+              int totalPages,
+              Person reader) {
     this.title = title;
     this.author = author;
     this.totalPages = totalPages;
-    this.currentPage = currentPage;
-    this.open = open;
+    this.open = false;
+    this.currentPage = 0;
     this.reader = reader;
   }
 
@@ -70,19 +78,12 @@ public class Book implements Publication {
     this.open = open;
   }
 
-  public String getReader() {
+  public Person getReader() {
     return reader;
   }
 
-  public void setReader(String reader) {
+  public void setReader(Person reader) {
     this.reader = reader;
-  }
-
-
-
-  // Abstract Methods
-  public void details() {
-
   }
 
 
@@ -90,26 +91,30 @@ public class Book implements Publication {
   // Implementation Methods
   @Override
   public void open() {
-
+    this.open = true;
   }
 
   @Override
   public void close() {
-
+    this.open = false;
   }
 
   @Override
-  public void skim() {
-
+  public void skim(int p) {
+    if (p > this.totalPages) {
+      this.currentPage = 0;
+    } else {
+      this.currentPage = p;
+    }
   }
 
   @Override
   public void nextPage() {
-
+    this.currentPage++;
   }
 
   @Override
   public void previousPage() {
-
+    this.currentPage--;
   }
 }

@@ -6,12 +6,16 @@ public class Person {
   private int age;
   private String gender;
 
+
+
   // Constructor Method
   public Person(String name, int age, String gender) {
     this.name = name;
     this.age = age;
     this.gender = gender;
   }
+
+
 
   // Special Methods (Getter && Setter)
   public String getName() {
@@ -26,7 +30,7 @@ public class Person {
     return age;
   }
 
-  public void setAge() {
+  public void setAge(int age) {
     this.age = age;
   }
 
@@ -38,9 +42,11 @@ public class Person {
     this.gender = gender;
   }
 
+
+
   // Abstract Methods
   public void Birthday() {
-
+    this.age++;
   }
 }
 
