@@ -10,12 +10,9 @@ public class Bank {
 
 
   // Constructor Method
-  public Bank(int accountNumber, String type, String owner, float balance, boolean status) {
-    this.accountNumber = accountNumber;
-    this.type = type;
-    this.owner = owner;
-    this.balance = balance;
-    this.status = status;
+  public Bank() {
+    this.setBalance(0);
+    this.setStatus(false);
   }
 
 
@@ -24,20 +21,19 @@ public class Bank {
     this.setType(type);
     this.setStatus(true);
     if (type == "CC") {
-      this.balance = 50;
-      System.out.println("Conta corrente aberta com sucesso em nome de " + this.getOwner());
+      this.setBalance(50);
     } else if (type == "CP") {
-      this.balance = 150;
-      System.out.println("Conta poupança aberta com sucesso em nome de " + this.getOwner());
+      this.setBalance(150);
     } else {
       System.out.println("Não há outro tipo de conta além de CC e CP");
     }
+    System.out.println(this.getType() + " aberta com sucesso em nome de " + this.getOwner());
   }
 
   public void closeAccount() {
-    if (this.balance > 0 ) {
+    if (this.getBalance() > 0) {
       System.out.println("Não é possível fechar a conta, pois ainda há dinheiro nela!");
-    } else if (this.balance < 0 ) {
+    } else if (this.getBalance() < 0) {
       System.out.println("Não é possível fechar a conta, pois ainda está devendo dinheiro!");
     } else {
       this.setStatus(false);
@@ -56,12 +52,12 @@ public class Bank {
 
   public void drawMoney(float value) {
     if (this.isStatus()) {
-      if (this.balance < 0) {
+      if (this.getBalance() < 0) {
         System.out.println("Não foi possível depositar dinheiro. Conta está fechada!");
-      } else if (this.balance == 0) {
+      } else if (this.getBalance() == 0) {
         System.out.println("Não foi possível depositar dinheiro. Conta está com saldo igual a zero!");
       } else {
-        this.setBalance(getBalance() - value);
+        this.setBalance(this.getBalance() - value);
         System.out.println("Saque de " + this.getBalance() + " feito em nome de " + this.getOwner());
       }
     } else {
@@ -87,13 +83,13 @@ public class Bank {
   }
 
 
-  @Override
-  public String toString() {
-    return "Bank [accountNumber=" + accountNumber + 
-           ", balance=" + balance + 
-           ", owner=" + owner + 
-           ", status=" + status +
-           ", type=" + type + "]";
+  public void currentStatus() {
+    System.out.println("-------------------------");
+    System.out.println("Conta: " + this.getAccountNumber());
+    System.out.println("Tipo: " + this.getType());
+    System.out.println("Dono: " + this.getOwner());
+    System.out.println("Saldo: " + this.getBalance());
+    System.out.println("Status: " + this.isStatus());
   }
   
 
