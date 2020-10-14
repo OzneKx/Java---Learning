@@ -15,20 +15,17 @@ public class Program {
     System.out.print("Quantity: ");
     product.quantity = sc.nextInt();
 
-    System.out.println("Product data: " + product.name + ", $" + product.price + 
-    ", " + product.quantity + " units, Total: $" + product.totalValueInStock());
+    System.out.println("Product data: " + product);
 
     System.out.print("Enter the number of products to be added in stock: ");
     product.addProducts(sc.nextInt());
 
-    System.out.println("Updated data: TV, $" + product.price + 
-    ", " + product.quantity + " units, Total: $" + product.totalValueInStock());
+    System.out.println("Updated data: " + product);
 
     System.out.print("Enter the number of products to be removed in stock: ");
     product.removeProducts(sc.nextInt());
 
-    System.out.println("Updated data: TV, $" + product.price + 
-    ", " + product.quantity + " units, Total: $" + product.totalValueInStock());
+    System.out.println("Updated data: " + product);
 
     sc.close();
   }
