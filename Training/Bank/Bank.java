@@ -42,7 +42,7 @@ public class Bank {
 
   // Methods
   public void depositMoney(double amount) {
-    if (this.getBalance() > 0 ) {
+    if (this.getBalance() >= 0 ) {
       this.balance += amount;
     } else {
       System.out.println("Você já está devendo dinheiro");
@@ -56,7 +56,7 @@ public class Bank {
 
   @Override
   public String toString() {
-    return "\nAccount " + this.getNumber() + ", Holder: " 
+    return "Account " + this.getNumber() + ", Holder: " 
     + this.getHolder() + ", Balance: $" + String.format("%.2f", this.getBalance());
   }
 }
