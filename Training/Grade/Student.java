@@ -26,7 +26,7 @@ public class Student {
     }  System.out.println("\nMISSING " + calculus() + " POINTS");
     return status;
   }
-
+ 
   @Override
   public String toString() {
     return "FINAL GRADE = " + String.format("%.2f", anualScore()) + "\n" + condition();
