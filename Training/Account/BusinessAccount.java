@@ -6,6 +6,6 @@ public class BusinessAccount extends Account {
 
   // Methods
   public void loan(double amount) {
-
+    
   }
 }
