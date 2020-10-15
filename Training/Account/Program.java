@@ -3,7 +3,6 @@ package Training.Account;
 public class Program {
   public static void main(String[] args) {
     Account account = new Account(1001, "Alex", 1000.0);
-    BusinessAccount businessAccount = new BusinessAccount(1002, "Maria", 0.0, 500.0);
     account.withdrawMoney(200.0);
     System.out.println(account.getBalance());
 
@@ -30,5 +29,9 @@ public class Program {
       account5.updateBalance();
       System.out.println("Update!");
     }
+
+    Account account5 = new BusinessAccount(1005, "Cléber", 1000.0, 500.0);
+    account5.withdrawMoney(200.0);
+    System.out.println(account5.getBalance());
   }
 }

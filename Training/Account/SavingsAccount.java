@@ -25,7 +25,7 @@ public class SavingsAccount extends Account {
 
   // Methods
   @Override
-  public void withdrawMoney(double amount) {
+  public final void withdrawMoney(double amount) {
     if (this.balance >= 0) {
       this.balance -= (amount);
     } else {

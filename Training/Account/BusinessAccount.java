@@ -4,7 +4,6 @@ public class BusinessAccount extends Account {
   // Attributes set
   private double loanLimit;
 
-
   // Constructor Method
   public BusinessAccount() {
     super();
@@ -15,7 +14,6 @@ public class BusinessAccount extends Account {
     this.loanLimit = amount;
   }
 
-
   // Special Methods (Getter && Setter)
   public double getLoanLimit() {
     return loanLimit;
@@ -25,12 +23,16 @@ public class BusinessAccount extends Account {
     this.loanLimit = loanLimit;
   }
 
-
   // Methods
+  @Override
+  public void withdrawMoney(double amount) {
+    super.withdrawMoney(amount);
+    balance -= 2.0;
+  }
+
   public void loan(double amount) {
     if (amount <= loanLimit) {
       balance += amount - 10.0;
     }
   }
-
 }
