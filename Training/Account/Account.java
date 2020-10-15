@@ -4,10 +4,22 @@ public class Account {
   // Attributes set
   private int number;
   private String holder;
-  private double balance;
+  protected double balance;
 
 
-  // Special Methods (Getter && Setter)
+  // Constructor method
+  public Account() {
+
+  }
+
+  public Account(int number, String holder, double balance) {
+    this.number = number;
+    this.holder = holder;
+    this.balance = balance;
+  }
+
+
+// Special Methods (Getter && Setter)
   public int getNumber() {
     return number;
   }
