@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Program {
@@ -19,7 +18,7 @@ public class Program {
     int quantity = scanner.nextInt();
 
     for (int c = 1; c <= quantity; c++) {
-      System.out.println("Product #" + c + "data:");
+      System.out.println("Product #" + c + " data:");
       System.out.print("Common; Used; Imported? (C/U/I): ");
       char option = scanner.next().charAt(0);
       System.out.print("Name: ");

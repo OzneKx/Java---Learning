@@ -1,6 +1,6 @@
 package Training.Account;
 
-public class Account {
+public abstract class Account {
   // Attributes set
   private int number;
   private String holder;

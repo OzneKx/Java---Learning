@@ -2,10 +2,6 @@ package Training.Account;
 
 public class Program {
   public static void main(String[] args) {
-    Account account = new Account(1001, "Alex", 1000.0);
-    account.withdrawMoney(200.0);
-    System.out.println(account.getBalance());
-
     // UPCASTING
     Account account1 = new SavingsAccount(1005, "Cleiton", 1000.0, 0.01);
     account1.withdrawMoney(200.0);
