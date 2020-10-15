@@ -1,7 +1,5 @@
 package Training.Bank;
 
-import java.util.Scanner;
-
 public class Bank {
   // Attributes set
   private int number;
