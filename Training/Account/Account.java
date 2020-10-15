@@ -44,7 +44,7 @@ public class Account {
   // Methods
   public void withdrawMoney(double amount) {
     if (this.balance >= 0) {
-      this.balance -= amount;
+      this.balance -= (amount + 5.0);
     } else {
       System.out.println("Não há saldo suficiente para sacar");
     }
