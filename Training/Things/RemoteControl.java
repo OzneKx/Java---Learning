@@ -1,4 +1,4 @@
-package Training;
+package Training.Things;
 
 public class RemoteControl implements Controller {
 

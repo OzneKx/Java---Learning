@@ -1,4 +1,4 @@
-package Training;
+package Training.Things;
 
 public class RemoteControllRun {
   public static void main(String[] args) {

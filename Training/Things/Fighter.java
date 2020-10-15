@@ -1,4 +1,4 @@
-package Training;
+package Training.Things;
 
 public class Fighter {
   // Attributes set (9)

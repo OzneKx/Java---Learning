@@ -1,4 +1,4 @@
-package Training;
+package Training.Things;
 
 public interface Controller {
   public abstract void turnOn();

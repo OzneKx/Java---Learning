@@ -1,4 +1,4 @@
-package Training;
+package Training.Things;
 
 import java.util.Random;
 
