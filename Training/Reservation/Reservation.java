@@ -1,13 +1,16 @@
 package Training.Reservation;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Reservation {
   // Attributes set
   private int roomNumber;
   private Date checkin;
   private Date checkout;
-public Object list;
+
+  private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 
   // Constructor method
@@ -35,16 +38,8 @@ public Object list;
     return checkin;
   }
 
-  public void setCheckin(Date checkin) {
-    this.checkin = checkin;
-  }
-
   public Date getCheckout() {
     return checkout;
-  }
-
-  public void setCheckout(Date checkout) {
-    this.checkout = checkout;
   }
 
 
@@ -52,19 +47,17 @@ public Object list;
   @Override
   public String toString() {
     return "Reservation: Room " + roomNumber + ", check-in: " 
-    + checkin + ", check-out: " + checkout + /* duration() + */ " nights";
+    + sdf.format(checkin) + ", check-out: " + sdf.format(checkout) 
+    + ", " + duration() + " nights";
   }
 
-  /* public int duration() {
-    return ();
-  } */
+  public long duration() {
+    long diff = checkout.getTime() - checkin.getTime();
+    return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+  }
 
   public void updateDates(Date checkin, Date checkout) {
-    if (checkin == checkout) {
-      System.out.println("Datas de checkin e checkout devem ser diferentes.");
-    } else {
-      setCheckin(checkin);
-      setCheckout(checkout);
-    }
+    this.checkin = checkin;
+    this.checkout = checkout;
   }
 }
