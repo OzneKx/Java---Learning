@@ -4,8 +4,6 @@ public class Invoice {
   // Attributes set
   private double basicPayment;
   private double tax;
-  private double totalPayment;
-
   
   // Constructor Methods
   public Invoice() {
@@ -16,7 +14,6 @@ public class Invoice {
     this.basicPayment = basicPayment;
     this.tax = tax;
   }
-
 
   // Special Methods (Getter && Setter)
   public double getBasicPayment() {
@@ -37,9 +34,5 @@ public class Invoice {
 
   public double getTotalPayment() {
     return getBasicPayment() + getTax();
-  }
-
-  public void setTotalPayment(double totalPayment) {
-    this.totalPayment = totalPayment;
   }
 }

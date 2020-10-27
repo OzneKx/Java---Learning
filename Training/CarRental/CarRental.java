@@ -10,11 +10,6 @@ public class CarRental {
   private Vehicle vehicle;
   private Invoice invoice;
 
-  // Constructor Method
-  private CarRental() {
-
-  }
-
   public CarRental(Date start, Date finish, Vehicle vehicle) {
     this.start = start;
     this.finish = finish;
