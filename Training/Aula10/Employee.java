@@ -1,7 +1,7 @@
 package Training.Aula10;
 
 public class Employee extends Person {
-  // Atributes set (2)
+  // Attributes set (2)
   private String sector;
   private boolean working;
 
@@ -14,7 +14,7 @@ public class Employee extends Person {
 
   
   
-  // Special Merhods (Getter && Setter) (4)
+  // Special Methods (Getter && Setter) (4)
   public String getSector() {
     return sector;
   }
